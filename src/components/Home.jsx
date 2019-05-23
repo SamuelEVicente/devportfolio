@@ -23,7 +23,7 @@ class Home extends Component {
     render() {
         const { classes } = this.props
         return (
-            <Grid container className={classes.root} >
+            <Grid id="homeSection" container className={classes.root} >
                 <Grid container className={classes.container} alignContent="center" alignItems="center">
                     <Grid item className={classes.column}>
                         <AnimatedText />
