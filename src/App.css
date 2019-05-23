@@ -23,6 +23,48 @@
   color: #61dafb;
 }
 
+.Nav-icon {
+  align-self: center
+}
+
+.container {
+  width: 100%;
+  height: 95%;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.trails-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trails-text {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  color: rgb(192, 192, 192);
+  font-size: 4em;
+  font-weight: 800;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.intro-header {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    opacity: 1;
+    transform-style: preserve-3d;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,4 +72,86 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;    
+}
+
+.home-page {
+  color: #000;
+  font-size: 56px;
+  line-height: 53px;
+  margin: 0;
+  font-family: font-file-82132;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  will-change: contents;
+  height: 90%;
+  min-height: 566px;
+  position: absolute;
+  opacity: 0;
+  bottom: 5%;
+  margin: 0 auto;
+  z-index: 1;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.logo {
+  position: relative;
+  z-index: 0;
+  width: 400px;
+  height: 609px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+}
+
+.text-zone {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 40%;
+  max-height: 90%;
 }
