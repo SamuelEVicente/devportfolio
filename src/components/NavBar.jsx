@@ -19,7 +19,11 @@ class NavBar extends PureComponent {
             onPointerOverAbout: false,
             onPointerOverWork: false,
             onPointerOverSkills: false,
-            onPointerOverContact: false
+            onPointerOverContact: false,
+            onPointerOverLinkedin: false,
+            onPointerOverTwitter: false,
+            onPointerOverFacebook: false,
+            onPointerOverInstagram: false
         }
     }
 
@@ -27,7 +31,7 @@ class NavBar extends PureComponent {
         scroll.scrollToTop()
     }
 
-    onPointerOver = (key) => {        
+    onPointerOver = (key) => {
         this.setState({ [key]: true })
     }
 
@@ -38,17 +42,17 @@ class NavBar extends PureComponent {
     renderSocialIcons = () => {
         return (
             <div>
-                <IconButton href="https://www.linkedin.com/in/samuel-vicente-4a275193/" style={{ color: 'black' }}>
-                    <FaLinkedin />
+                <IconButton onPointerLeave={() => this.onPointerLeave('onPointerOverLinkedin')} onPointerOver={() => this.onPointerOver('onPointerOverLinkedin')} href="https://www.linkedin.com/in/samuel-vicente-4a275193/" style={{ color: 'black' }}>
+                    <FaLinkedin color={this.state.onPointerOverLinkedin ? "#87CEEB" : "black"} />
                 </IconButton>
-                <IconButton href="https://twitter.com/SammyVicente_" style={{ color: 'black' }} >
-                    <FaTwitter/>
+                <IconButton onPointerLeave={() => this.onPointerLeave('onPointerOverTwitter')} onPointerOver={() => this.onPointerOver('onPointerOverTwitter')} href="https://twitter.com/SammyVicente_" style={{ color: 'black' }} >
+                    <FaTwitter color={this.state.onPointerOverTwitter ? "#87CEEB" : "black"} />
                 </IconButton>
-                <IconButton href="https://www.facebook.com/samueleduardomusic" style={{ color: 'black' }}>
-                    <FaFacebook/>
+                <IconButton onPointerLeave={() => this.onPointerLeave('onPointerOverFacebook')} onPointerOver={() => this.onPointerOver('onPointerOverFacebook')} href="https://www.facebook.com/samueleduardomusic" style={{ color: 'black' }}>
+                    <FaFacebook color={this.state.onPointerOverFacebook ? "#87CEEB" : "black"} />
                 </IconButton>
-                <IconButton href="https://www.instagram.com/samuelevicente/?hl=en" style={{ color: 'black' }}>
-                    <FaInstagram />
+                <IconButton onPointerLeave={() => this.onPointerLeave('onPointerOverInstagram')} onPointerOver={() => this.onPointerOver('onPointerOverInstagram')} href="https://www.instagram.com/samuelevicente/?hl=en" style={{ color: 'black' }}>
+                    <FaInstagram color={this.state.onPointerOverInstagram ? "#87CEEB" : "black"} />
                 </IconButton>
             </div>
         )
@@ -59,62 +63,62 @@ class NavBar extends PureComponent {
             <div>
                 <Link
                     activeClass="active"
-                    to="section1"
+                    to="homeSection"
                     spy={true}
                     smooth={true}
-                    offset={-70}
+                    offset={-125}
                     duration={500}
                 >
-                    <IconButton id="Home" style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverHome')} onPointerLeave={() => this.onPointerLeave('onPointerOverHome')} >
-                        {!this.state.onPointerOverHome ? <HomeIcon fontSize="large" /> : <text>Home</text>}
+                    <IconButton style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverHome')} onPointerLeave={() => this.onPointerLeave('onPointerOverHome')} >
+                        {!this.state.onPointerOverHome ? <HomeIcon color={this.state.onPointerOverHome ? "#87CEEB" : 'inherit'} fontSize="large" /> : <p className="nav-label">Home</p>}
                     </IconButton>
                 </Link>
                 <Link
                     activeClass="active"
-                    to="section1"
+                    to="aboutSection"
                     spy={true}
                     smooth={true}
-                    offset={-70}
+                    offset={-125}
                     duration={500}
                 >
-                    <IconButton id="About" style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverAbout')} onPointerLeave={() => this.onPointerLeave('onPointerOverAbout')}>
-                        {!this.state.onPointerOverAbout ? <AccountCircle fontSize="large" /> : <text>About</text>}
+                    <IconButton style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverAbout')} onPointerLeave={() => this.onPointerLeave('onPointerOverAbout')}>
+                        {!this.state.onPointerOverAbout ? <AccountCircle fontSize="large" /> : <p className="nav-label">About</p>}
                     </IconButton>
                 </Link>
                 <Link
                     activeClass="active"
-                    to="section1"
+                    to="workSection"
                     spy={true}
                     smooth={true}
-                    offset={-70}
+                    offset={-125}
                     duration={500}
                 >
-                    <IconButton id="Work" style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverWork')} onPointerLeave={() => this.onPointerLeave('onPointerOverWork')}>
-                        {!this.state.onPointerOverWork ? <WorkIcon fontSize="large" /> : <text>My Work</text>}
+                    <IconButton style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverWork')} onPointerLeave={() => this.onPointerLeave('onPointerOverWork')}>
+                        {!this.state.onPointerOverWork ? <WorkIcon fontSize="large" /> : <p className="nav-label">Projects</p>}
                     </IconButton>
                 </Link>
                 <Link
                     activeClass="active"
-                    to="section1"
+                    to="skillSection"
                     spy={true}
                     smooth={true}
-                    offset={-70}
+                    offset={-125}
                     duration={500}
                 >
-                    <IconButton id="Skills" style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverSkills')} onPointerLeave={() => this.onPointerLeave('onPointerOverSkills')}>
-                        {!this.state.onPointerOverSkills ? <EyeIcon fontSize="large" /> : <text>Skills</text>}
+                    <IconButton style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverSkills')} onPointerLeave={() => this.onPointerLeave('onPointerOverSkills')}>
+                        {!this.state.onPointerOverSkills ? <EyeIcon fontSize="large" /> : <p className="nav-label">Skills</p>}
                     </IconButton>
                 </Link>
                 <Link
                     activeClass="active"
-                    to="section1"
+                    to="contactSection"
                     spy={true}
                     smooth={true}
-                    offset={-70}
+                    offset={-125}
                     duration={500}
                 >
-                    <IconButton id="Contact" style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverContact')} onPointerLeave={() => this.onPointerLeave('onPointerOverContact')}>
-                        {!this.state.onPointerOverContact ? <MailIcon fontSize="large" /> : <text>Contact</text>}
+                    <IconButton style={{ color: 'black' }} onPointerOver={() => this.onPointerOver('onPointerOverContact')} onPointerLeave={() => this.onPointerLeave('onPointerOverContact')}>
+                        {!this.state.onPointerOverContact ? <MailIcon fontSize="large" /> : <p className="nav-label">Contact</p>}
                     </IconButton>
                 </Link>
             </div>
@@ -131,12 +135,20 @@ class NavBar extends PureComponent {
     render() {
         //const { classes } = this.props
         return (
-            <div>
-                <AppBar style={{ backgroundColor: 'transparent' }} position="static" >
-                    <Toolbar style={{ flex: 1, justifyContent: 'space-between' }}>
+            <div style={{ flexGrow: 1 }}>
+                <AppBar position="fixed" >
+                    <Toolbar className='toolbar'>
+                        {/* <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="center"
+                    > */}
                         {this.renderLogo()}
                         {this.renderActionIcons()}
                         {this.renderSocialIcons()}
+                        {/* </Toolbar> */}
+                        {/* </Grid> */}
                     </Toolbar>
                 </AppBar>
             </div>
