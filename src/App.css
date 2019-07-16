@@ -36,6 +36,15 @@
   flex-direction: row;
 }
 
+.hr {
+  width: 50px;
+  height: 4px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin: 0 auto 60px;
+  background: #e4e4e4;
+}
+
 .trails-main {
   position: relative;
   width: 100%;
@@ -64,6 +73,65 @@
     opacity: 1;
     transform-style: preserve-3d;
 }
+
+.toolbar {
+  background-color: white;
+  justify-content: space-between;
+  width: 100%
+}
+
+.appbar {
+background-color: white;
+width: 100%;
+}
+
+.text-input {
+  padding: .5rem;
+  font-size: 16px;
+  width: 85%;
+  display: block;  
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  align-self: center;
+  margin-bottom: 10px;
+  margin: 20px auto 0;
+}
+
+.nav-bar {
+background-color: 'white';
+ margin-bottom: 100 ;
+}
+
+.comment-text-input {
+  padding: .5rem;
+  font-size: 16px;
+  width: 85%;
+  height: 100px;
+  display: block;  
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  align-self: auto;
+  margin-bottom: 10px;
+  margin: 20px auto 0;
+}
+
+.contact-form {
+  width:25%;
+  background-color:rgb(192, 192, 192);
+  border: 1px solid white;
+  margin: 50px auto 0;
+  padding: 1em;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.nav-label {
+  color:#87CEEB;
+  font-size: 14px
+}
+
 
 @keyframes App-logo-spin {
   from {
