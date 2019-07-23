@@ -15,7 +15,19 @@ const styles = theme => ({
     },
     column: {
         height: '95%',
-        width: '50%'
+        width: '50%',
+        [theme.breakpoints.down('sm')]: {
+          width: '100%',
+          fontSize: 8
+        },
+    },
+    columnOne: {
+        height: '95%',
+        width: '50%',
+        display: 'none',
+        [theme.breakpoints.up('md')]: {
+          display: 'flex',
+        },
     }
 });
 
@@ -28,7 +40,7 @@ class Home extends Component {
                     <Grid item className={classes.column}>
                         <AnimatedText />
                     </Grid>
-                    <Grid item className={classes.column} style={{ marginTop: 100 }}>
+                    <Grid item className={classes.columnOne} style={{ marginTop: 100 }}>
                         <img src="images/JustLogoSideWays.png" alt="Dev Logo" />
                     </Grid>
                 </Grid>
