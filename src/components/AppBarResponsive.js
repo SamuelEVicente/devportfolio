@@ -12,7 +12,7 @@ import MailIcon from '@material-ui/icons/MailOutlined'
 import HomeIcon from '@material-ui/icons/HomeOutlined'
 import EyeIcon from '@material-ui/icons/RemoveRedEyeOutlined'
 import WorkIcon from '@material-ui/icons/WorkOutline'
-import { FaFacebook, FaGithub } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaRegFilePdf } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
@@ -54,6 +54,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
+    marginLeft: '6%'
   },
   titleContainer: {
     width: '100%'
@@ -120,6 +121,7 @@ export default function AppBarResponsive() {
   const [onPointerOverInstagram, setOnPointerOverInstagram] = React.useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
   const [onPointerOverGithub, setOnPointerOverGithub] = React.useState(null)
+  const [onPointerOverResume, setOnPointerOverResume] = React.useState(null)
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -173,6 +175,9 @@ export default function AppBarResponsive() {
       case 'onPointerOverGithub':
         setOnPointerOverGithub(true)
         break
+      case 'onPointerOverResume':
+        setOnPointerOverResume(true)
+        break
       default:
         break
     }
@@ -209,6 +214,9 @@ export default function AppBarResponsive() {
         break
       case 'onPointerOverGithub':
         setOnPointerOverGithub(false)
+        break
+      case 'onPointerOverResume':
+        setOnPointerOverResume(false)
         break
       default:
         break
@@ -380,6 +388,9 @@ export default function AppBarResponsive() {
           {!onPointerOverContact ? <MailIcon fontSize="large" /> : <p className="nav-label">Contact</p>}
         </IconButton>
       </Link>
+      <IconButton href="https://samuelevicente.github.io/resume/" onPointerLeave={() => onPointerLeave('onPointerOverResume')} onPointerOver={() => onPointerOver('onPointerOverResume')} style={{ color: 'black' }}>
+      {!onPointerOverResume ? <FaRegFilePdf color={onPointerOverResume ? "#87CEEB" : "black"} /> : <p className="nav-label">Resume</p>}
+      </IconButton>
     </div>
   )
 
