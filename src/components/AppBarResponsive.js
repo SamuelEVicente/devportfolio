@@ -388,8 +388,8 @@ export default function AppBarResponsive() {
           {!onPointerOverContact ? <MailIcon fontSize="large" /> : <p className="nav-label">Contact</p>}
         </IconButton>
       </Link>
-      <IconButton href="https://samuelevicente.github.io/resume/" onPointerLeave={() => onPointerLeave('onPointerOverResume')} onPointerOver={() => onPointerOver('onPointerOverResume')} style={{ color: 'black' }}>
-      {!onPointerOverResume ? <FaRegFilePdf color={onPointerOverResume ? "#87CEEB" : "black"} /> : <p className="nav-label">Resume</p>}
+      <IconButton style={{fontSize: 24}} href="https://samuelevicente.github.io/resume/" onPointerLeave={() => onPointerLeave('onPointerOverResume')} onPointerOver={() => onPointerOver('onPointerOverResume')} style={{ color: 'black' }}>
+        {!onPointerOverResume ? <FaRegFilePdf color={onPointerOverResume ? "#87CEEB" : "black"} /> : <p className="nav-label">Resume</p>}
       </IconButton>
     </div>
   )
