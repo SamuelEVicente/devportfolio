@@ -12,7 +12,7 @@ import MailIcon from '@material-ui/icons/MailOutlined'
 import HomeIcon from '@material-ui/icons/HomeOutlined'
 import EyeIcon from '@material-ui/icons/RemoveRedEyeOutlined'
 import WorkIcon from '@material-ui/icons/WorkOutline'
-import { FaFacebook } from 'react-icons/fa'
+import { FaFacebook, FaGithub } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
@@ -119,6 +119,7 @@ export default function AppBarResponsive() {
   const [onPointerOverFacebook, setOnPointerOverFacebook] = React.useState(null)
   const [onPointerOverInstagram, setOnPointerOverInstagram] = React.useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
+  const [onPointerOverGithub, setOnPointerOverGithub] = React.useState(null)
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -169,6 +170,9 @@ export default function AppBarResponsive() {
       case 'onPointerOverInstagram':
         setOnPointerOverInstagram(true)
         break
+      case 'onPointerOverGithub':
+        setOnPointerOverGithub(true)
+        break
       default:
         break
     }
@@ -202,6 +206,9 @@ export default function AppBarResponsive() {
         break
       case 'onPointerOverInstagram':
         setOnPointerOverInstagram(false)
+        break
+      case 'onPointerOverGithub':
+        setOnPointerOverGithub(false)
         break
       default:
         break
@@ -292,6 +299,9 @@ export default function AppBarResponsive() {
 
   const renderSocialIcons = (
     <div className={classes.sectionDesktop}>
+      <IconButton onPointerLeave={() => onPointerLeave('onPointerOverGithub')} onPointerOver={() => onPointerOver('onPointerOverGithub')} href="https://github.com/SamuelEVicente" style={{ color: 'black' }}>
+        <FaGithub color={onPointerOverGithub ? "#87CEEB" : "black"} />
+      </IconButton>
       <IconButton onPointerLeave={() => onPointerLeave('onPointerOverLinkedin')} onPointerOver={() => onPointerOver('onPointerOverLinkedin')} href="https://www.linkedin.com/in/samuel-vicente-4a275193/" style={{ color: 'black' }}>
         <FaLinkedin color={onPointerOverLinkedin ? "#87CEEB" : "black"} />
       </IconButton>
