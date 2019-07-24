@@ -79,51 +79,52 @@ export default function Projects() {
     const projectList = [
         {
             photo: [require('../assets/images/netflix/1.png'), require('../assets/images/netflix/2.png'), require('../assets/images/netflix/3.png')],
+            initialPhoto: require('../assets/images/netflix/1.png'),
             heading: 'Netflix Clone',
             content: 'React UI cloning the Netflix app',
             description: 'Practice project using React and a Third party MovieDB to retrieve data and populate lists/scrollviews using the parsed data.',
             alt: 'netflix',
             modalOpen: isNetflixModalOpen,
             axis: 'horizontal',
-            viewSource: true,
-            viewLive: true,
+            viewSource: 'https://github.com/SamuelEVicente/netflixclone',
+            viewLive: 'https://netflixsvclone.herokuapp.com/',
             id: 'netflix'
 
         },
         {
-            photo: [require('../assets/images/timemgmt.png'), require('../assets/images/timemgmt/1.png'), require('../assets/images/timemgmt/2.png'), require('../assets/images/timemgmt/3.png'), require('../assets/images/timemgmt/4.png'), require('../assets/images/timemgmt/5.png')],
+            photo: [require('../assets/images/timemgmt/1.png'), require('../assets/images/timemgmt/2.png'), require('../assets/images/timemgmt/3.png'), require('../assets/images/timemgmt/4.png'), require('../assets/images/timemgmt/5.png')],
+            initialPhoto: require('../assets/images/timemgmt.png'),
             heading: 'Time Management',
             content: 'An Mobile Application that can manage your tasks for each day of the week',
             description: 'Mobile application used to track your daily tasks and can present your day in a pie chart diagram or present your week. Made for practice purposes on learning new front end framework Flutter by Google.',
             alt: 'time management',
             modalOpen: isTimeMgmtModalOpen,
             axis: 'vertical',
-            viewSource: true,
-            viewLive: false,
+            viewSource: 'https://github.com/SamuelEVicente/timemanagement',
             id: 'timemgmt'
         },
         {
-            photo: [require('../assets/images/ocasiospoolspa/1.png'),require('../assets/images/ocasiospoolspa/2.png'),require('../assets/images/ocasiospoolspa/3.png'),require('../assets/images/ocasiospoolspa/4.png'),require('../assets/images/ocasiospoolspa/5.png')],
+            photo: [require('../assets/images/ocasiospoolspa/1.png'), require('../assets/images/ocasiospoolspa/2.png'), require('../assets/images/ocasiospoolspa/3.png'), require('../assets/images/ocasiospoolspa/4.png'), require('../assets/images/ocasiospoolspa/5.png')],
+            initialPhoto: require('../assets/images/ocasiospoolspa/1.png'),
             heading: 'Ocasio\'s Pools & Spa',
             content: 'A landing page for a Superb Local Pool cleaning service in San Antonio, TX',
             description: 'Ocasio\'s Pools & Spa is a local pool cleaning company in San Antonio, TX, that will have your pool sparkling. Website built with React, Express, Material UI, NodeJS. Features simple user flow and interaction.',
             alt: 'ocasio',
             modalOpen: isOcasioModalOpen,
             axis: 'horizontal',
-            viewSource: false,
-            viewLive: true,
+            viewLive: 'https://ocasiopools.herokuapp.com/',
             id: 'ocasio',
         },
         {
             photo: [require('../assets/images/artiblecity/1.png'), require('../assets/images/artiblecity/2.png')],
+            initialPhoto: require('../assets/images/artiblecity/1.png'),
             heading: 'Artible City',
             content: 'Co-Founder of Artible City , created static web site landing page for not yet release mobile application',
             description: 'Artible City is a Independent Entertainment brand that enforces freedom as an independent artist. Web application was built using Pug/HTML,CSS,Javascript with a NodeJS server.',
             alt: 'Artible City',
             modalOpen: isArtibleWebModalOpen,
             axis: 'horizontal',
-            viewSource: false,
-            viewLive: true,
+            viewLive: 'https://artiblecity.com',
             id: 'artibleweb'
         },
         // {
@@ -195,7 +196,7 @@ export default function Projects() {
         <React.Fragment >
             <CssBaseline />
             <main>
-                <Container id='workSection' className={classes.cardGrid} maxWidth="md">
+                <Container id='workSection' className={classes.cardGrid} maxWidth="lg">
                     <h1 style={{ fontFamily: 'Raleway', width: '100%' }}>Projects</h1>
                     <h1 className="hr" >{}</h1>
                     {/* End hero unit */}
@@ -205,7 +206,7 @@ export default function Projects() {
                                 <Card className={classes.card}>
                                     <CardMedia
                                         className={classes.cardMedia}
-                                        image={card.photo[0]}
+                                        image={card.initialPhoto}
                                         title={card.alt}
                                     />
                                     <CardContent className={classes.cardContent}>
@@ -234,7 +235,7 @@ export default function Projects() {
                         return (
                             <Dialog className={classes.card} key={index} onBackdropClick={handleLearnMoreClose} onClose={handleLearnMoreClose} aria-labelledby="customized-dialog-title" open={modal.modalOpen}  >
                                 <DialogContent >
-                                    <Carousel  dynamicHeight={false} infiniteLoop={true} autoPlay={true} swipeable={true} interval={3000} showThumbs={false} showIndicators={false} showStatus={false} showArrows={true}>
+                                    <Carousel dynamicHeight={false} infiniteLoop={true} autoPlay={true} swipeable={true} interval={3000} showThumbs={false} showIndicators={false} showStatus={false} showArrows={true}>
                                         {modal.photo.map((photo, index) => {
                                             return <div key={index}>
                                                 <img src={photo} alt="" />
@@ -252,14 +253,14 @@ export default function Projects() {
                                     <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
                                         <div>
                                             {
-                                                modal.viewSource === true &&
-                                                <Button size="small" color="primary">
+                                                modal.viewSource !== undefined &&
+                                                <Button href={modal.viewSource} size="small" color="primary">
                                                     View Source
                                             </Button>
                                             }
                                             {
-                                                modal.viewLive === true &&
-                                                <Button size="small" color="primary">
+                                                modal.viewLive !== undefined &&
+                                                <Button href={modal.viewLive} size="small" color="primary">
                                                     View Live
                                             </Button>
                                             }
