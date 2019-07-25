@@ -20,10 +20,11 @@ const tiers = [
             'MV* Frameworks',
             'React',
             'React-Native',
+            'Flutter',
             'Redux',
             'Babel',
             'Webpack',
-            'Responsive Design',
+            'Responsive Design'            
         ],
     },
     {
