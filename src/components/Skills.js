@@ -17,7 +17,6 @@ const tiers = [
             'HTML5',
             'CSS3',
             'JavaScript',
-            'MV* Frameworks',
             'React',
             'React-Native',
             'Flutter',
