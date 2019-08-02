@@ -8,17 +8,13 @@ import Container from '@material-ui/core/Container';
 const useStyles = makeStyles(theme => ({
     '@global': {
         body: {
-            backgroundColor: theme.palette.common.white,
+            backgroundColor: '#FFF',
         },
     },
     paper: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-    },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
     },
     form: {
         width: '100%', // Fix IE 11 issue.

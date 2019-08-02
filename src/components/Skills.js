@@ -42,7 +42,7 @@ const tiers = [
 const styles = theme => ({
     '@global': {
         body: {
-            backgroundColor: theme.palette.common.white,
+            backgroundColor: '#FFF',
         },
     },
     appBar: {

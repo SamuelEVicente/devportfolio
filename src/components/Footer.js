@@ -17,7 +17,7 @@ function MadeWithLove() {
 
 const useStyles = makeStyles(theme => ({
     footer: {
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: '#FAFAFA',
         padding: theme.spacing(6),
     },
 }))
