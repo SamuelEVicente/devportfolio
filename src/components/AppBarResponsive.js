@@ -54,7 +54,8 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
-    marginLeft: '6%'
+    //marginLeft: '6%'
+    marginLeft: theme.spacing(12)
   },
   titleContainer: {
     width: '100%'
@@ -97,6 +98,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
+    marginRight: theme.spacing(3)
   },
   sectionMobile: {
     display: 'flex',
@@ -104,6 +106,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
+    marginRight: theme.spacing(3)
   },
 }))
 

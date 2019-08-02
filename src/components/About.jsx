@@ -29,7 +29,7 @@ export default function About() {
             alignItems: 'center',
             marginBottom: 150
         }}>
-            <h1 style={{ fontFamily: 'Raleway', width: '100%' }}>About</h1>
+            <h1>About</h1>
             <h1 className="hr" >{}</h1>
             <Grid container alignContent="center" alignItems="center" spacing={10}>
                 <Grid item className={classes.column}>

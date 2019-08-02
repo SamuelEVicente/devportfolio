@@ -91,8 +91,8 @@ class Skills extends Component {
     render() {
         const { classes } = this.props
         return (
-            <Container id="skillSection" style={{ marginBottom: 150 }}>
-                <h1 style={{ fontFamily: 'Raleway', width: '100%' }}>Skills</h1>
+            <Container id="skillSection" style={{ marginBottom: 75 }}>
+                <h1>Skills</h1>
                 <h1 className="hr" >{}</h1>
 
                 <Grid container spacing={3} alignItems="flex-start">

@@ -1,5 +1,4 @@
 import React from 'react'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import { FaFacebook } from 'react-icons/fa'
@@ -26,7 +25,6 @@ export default function Footer() {
     const classes = useStyles()
     return (
         <React.Fragment>
-            <CssBaseline />
             <footer className={classes.footer}>
                 <div>
                     <IconButton href="https://www.linkedin.com/in/samuel-vicente-4a275193/" style={{ color: 'black' }}>

@@ -24,7 +24,7 @@ class ContactForm extends Component {
     render() {
         return (
             <div id-="contactSection" style={{ marginBottom: 150, flexDirection: 'column' }}>
-                <h1 style={{ fontFamily: 'Raleway' }}>Contact</h1>
+                <h1>Contact</h1>
                 <h1 className="hr" >{}</h1>
                 <Formik
                     initialValues={{ name: '', email: '', comments: '' }}

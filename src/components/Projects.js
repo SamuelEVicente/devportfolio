@@ -4,7 +4,6 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
@@ -194,10 +193,9 @@ export default function Projects() {
 
     return (
         <React.Fragment >
-            <CssBaseline />
             <main>
                 <Container id='workSection' className={classes.cardGrid} maxWidth="lg">
-                    <h1 style={{ fontFamily: 'Raleway', width: '100%' }}>Projects</h1>
+                    <h1>Projects</h1>
                     <h1 className="hr" >{}</h1>
                     {/* End hero unit */}
                     <Grid container spacing={4}>
