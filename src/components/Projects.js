@@ -111,7 +111,7 @@ export default function Projects() {
             alt: 'ocasio',
             modalOpen: isOcasioModalOpen,
             axis: 'horizontal',
-            viewLive: 'https://ocasiopools.herokuapp.com/',
+            viewLive: 'https://ocasiospools.com',
             id: 'ocasio',
         },
         {
